@@ -3,6 +3,7 @@
 #include<iostream>
 #include <sstream>
 #include<fstream>
+#include"glm/glm.hpp"
 
 struct ShaderProgram
 {
@@ -23,6 +24,7 @@ public:
     ~ShaderParser();
     void SetUnifrom4f(const std::string& name, float v0, float v1, float v2, float v3);
     void SetUnifrom1i(const std::string& name, int slot);
+    void SetUniformMat4f(const std::string& name, glm::mat4 MVP);
     void Bind() const;
     void Unbind() const;
 private:

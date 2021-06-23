@@ -23,6 +23,12 @@ void ShaderParser::SetUnifrom1i(const std::string& name, int slot)
     
 }
 
+void ShaderParser::SetUniformMat4f(const std::string& name, glm::mat4 MVP)
+{
+    GLCall(glUniformMatrix4fv(GetUniformLocation(name), 1,GL_FALSE,&MVP[0][0]));
+   
+}
+
 ShaderProgram ShaderParser::ParseShader(const std::string& filepath)
 {
     std::ifstream stream(filepath);
